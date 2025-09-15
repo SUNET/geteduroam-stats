@@ -1,0 +1,6 @@
+[project]
+name = "geteduroam-stats"
+version = "0.1.0"
+description = "Statistics generator for geteduroam.se"
+requires-python = ">=3.13"
+dependencies = []
