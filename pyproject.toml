@@ -3,4 +3,8 @@ name = "geteduroam-stats"
 version = "0.1.0"
 description = "Statistics generator for geteduroam.se"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "mariadb>=1.1.13",
+    "opentelemetry-exporter-otlp>=1.37.0",
+    "opentelemetry-sdk>=1.37.0",
+]
