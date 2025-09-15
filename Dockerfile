@@ -7,5 +7,6 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 RUN apt-get -q update
 RUN apt-get -y upgrade
 RUN apt-get -y install python3-dev build-essential libmariadb-dev
+RUN rm -rf /var/lib/apt/lists/*
 RUN uv sync --frozen
 COPY stats.py /
