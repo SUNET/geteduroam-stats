@@ -50,6 +50,13 @@ try:
     for requester, revoked, expires in cursor:
         active = False
         org = requester.split("@")[1]
+        parts = org.split('.')
+        # Some orgs have multiple scopes for diffrent kind of users. We only want to show one domain per org in the graphs.
+        # E.g student.konstfack.se and konstfack.se
+        # Based on the current set of Scopes in Swamid this assumtion should be safe.
+        if len(parts) != 2:
+            parts = parts[1:]
+            org = '.'.join(parts)
 
         if org not in profiles:
             profiles[org] = {"active": 0, "revoked": 0, "expired": 0}
